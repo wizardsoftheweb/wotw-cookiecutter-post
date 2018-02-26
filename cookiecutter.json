@@ -4,5 +4,6 @@
   "posts_dir": "posts",
   "templates_dir": "{{ cookiecutter.posts_dir }}",
   "build_dir": "build",
-  "install_shell_session": ["yes", "no"]
+  "install_shell_session": ["yes", "no"],
+  "short_description": "stuff"
 }

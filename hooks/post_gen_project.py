@@ -3,6 +3,7 @@
 from os import getcwd, listdir, makedirs, remove
 from os.path import join
 from shutil import move, rmtree
+from subprocess import check_call
 
 from cookiecutter.main import cookiecutter
 
@@ -44,3 +45,13 @@ for item in CURRENT_FILES:
     move(join(NESTED_DIR, item), ROOT_DIR)
 
 rmtree(NESTED_DIR)
+
+check_call(['git', 'add', '.gitignore'])
+check_call(
+    [
+        'git',
+        'commit',
+        '-m',
+        'Extend .gitignore with Python.gitignore'
+    ]
+)

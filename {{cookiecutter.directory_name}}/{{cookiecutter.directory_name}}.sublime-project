@@ -5,7 +5,8 @@
 			"path": "."
 		}
 	],
-    "build_systems": [
+    "build_systems":
+    [
         {
             "selector": "source.python",
             "name": "Python: run",

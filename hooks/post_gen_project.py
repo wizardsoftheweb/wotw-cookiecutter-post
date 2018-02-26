@@ -57,3 +57,5 @@ check_call(
 )
 check_call(['git', 'add', 'README.md'])
 check_call(['git', 'commit', '-m', 'Expand docs'])
+check_call(['git', 'add', 'compiler.py'])
+check_call(['git', 'commit', '-m', 'Draft basic post compiler'])

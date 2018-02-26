@@ -1,4 +1,7 @@
 {
   "post_slug": "posts-new-one",
-  "directory_name": "posts-{{ cookiecutter.post_slug }}"
+  "directory_name": "posts-{{ cookiecutter.post_slug }}",
+  "posts_dir": "posts",
+  "templates_dir": "{{ cookiecutter.posts_dir }}",
+  "build_dir": "build"
 }

@@ -23,6 +23,7 @@ cookiecutter(
 )
 
 NESTED_DIR = join(ROOT_DIR, '{{ cookiecutter.directory_name }}')
+remove(join(NESTED_DIR, '{{ cookiecutter.directory_name }}.sublime-project'))
 
 CURRENT_FILES = listdir(NESTED_DIR)
 NEW_FILES = listdir(ROOT_DIR)

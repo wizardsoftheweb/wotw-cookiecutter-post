@@ -1,6 +1,9 @@
 """This file provides hooks to be run after basic generation"""
 
-from os import getcwd, makedirs
+from os import getcwd, listdir, makedirs, remove
+from os.path import join
+from shutil import move, rmtree
+
 from cookiecutter.main import cookiecutter
 
 from wotw_blogger.generator.macro import ShellSession
@@ -20,3 +23,24 @@ cookiecutter(
         'directory_name': '{{ cookiecutter.directory_name }}'
     }
 )
+
+NESTED_DIR = join(ROOT_DIR, '{{ cookiecutter.directory_name }}')
+
+CURRENT_FILES = listdir(NESTED_DIR)
+NEW_FILES = listdir(ROOT_DIR)
+
+for item in NEW_FILES:
+    new_file_path = join(ROOT_DIR, item)
+    if item in CURRENT_FILES:
+        with open(new_file_path, 'r') as new_file:
+            with open(join(NESTED_DIR, item), 'a') as current_file:
+                current_file.write(new_file.read())
+        remove(new_file_path)
+    else:
+        move(new_file_path, NESTED_DIR)
+
+CURRENT_FILES = listdir(NESTED_DIR)
+for item in CURRENT_FILES:
+    move(join(NESTED_DIR, item), ROOT_DIR)
+
+rmtree(NESTED_DIR)

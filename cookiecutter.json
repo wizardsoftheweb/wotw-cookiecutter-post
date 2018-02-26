@@ -1,0 +1,4 @@
+{
+  "post_slug": "posts-new-one",
+  "directory_name": "posts-{{ cookiecutter.post_slug }}"
+}

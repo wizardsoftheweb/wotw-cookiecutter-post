@@ -1,3 +1,4 @@
+{{ cookiecutter.build_dir }}
 .vagrant
 
 # Everything below pulled directly from

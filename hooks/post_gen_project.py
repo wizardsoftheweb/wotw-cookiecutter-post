@@ -14,9 +14,6 @@ ROOT_DIR = getcwd()
 if '{{ cookiecutter.posts_dir }}' != '{{ cookiecutter.templates_dir }}':
     makedirs('{{ cookiecutter.templates_dir }}')
 
-if 'yes' == '{{ cookiecutter.install_shell_session }}':
-    ShellSession().install('{{ cookiecutter.templates_dir }}')
-
 cookiecutter(
     'https://github.com/wizardsoftheweb/wotw-cookiecutter-base.git',
     no_input=True,
@@ -61,3 +58,20 @@ check_call(['git', 'add', 'compiler.py'])
 check_call(['git', 'commit', '-m', 'Draft basic post compiler'])
 check_call(['git', 'add', join('{{ cookiecutter.posts_dir }}', '.gitignore')])
 check_call(['git', 'commit', '-m', 'Define posts directory'])
+
+if 'yes' == '{{ cookiecutter.install_shell_session }}':
+    ShellSession().install('{{ cookiecutter.templates_dir }}')
+    check_call(
+        [
+            'git',
+            'add',
+            join('{{ cookiecutter.templates_dir }}', 'shell_session.j2')
+        ]
+    )
+    check_call(
+        [
+            'git',
+            'commit',
+            '-m',
+            'Include shell_session macro']
+    )

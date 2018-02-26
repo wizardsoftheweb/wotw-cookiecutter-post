@@ -55,3 +55,5 @@ check_call(
         'Extend .gitignore with Python.gitignore'
     ]
 )
+check_call(['git', 'add', 'README.md'])
+check_call(['git', 'commit', '-m', 'Expand docs'])

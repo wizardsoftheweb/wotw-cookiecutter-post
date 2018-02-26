@@ -1,6 +1,6 @@
 # `wotw-cookiecutter-post`
 
-WIP.
+This template builds a repo capable of compiling posts for my blog.
 
 <!-- MarkdownTOC -->
 

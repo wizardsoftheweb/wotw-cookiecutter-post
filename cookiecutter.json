@@ -1,5 +1,5 @@
 {
-  "post_slug": "posts-new-one",
+  "post_slug": "new-one",
   "directory_name": "posts-{{ cookiecutter.post_slug }}",
   "posts_dir": "posts",
   "templates_dir": "{{ cookiecutter.posts_dir }}",

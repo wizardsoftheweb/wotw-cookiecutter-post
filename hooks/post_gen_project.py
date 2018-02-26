@@ -76,3 +76,6 @@ if 'yes' == '{{ cookiecutter.install_shell_session }}':
             '-m',
             'Include shell_session macro']
     )
+
+check_call(['git', 'add', '{{ cookiecutter.directory_name }}.sublime-project'])
+check_call(['git', 'commit', '-m', 'Add common build systems'])

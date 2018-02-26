@@ -1,0 +1,9 @@
+{
+  "post_slug": "new-one",
+  "directory_name": "posts-{{ cookiecutter.post_slug }}",
+  "posts_dir": "posts",
+  "templates_dir": "{{ cookiecutter.posts_dir }}",
+  "build_dir": "build",
+  "install_shell_session": ["yes", "no"],
+  "short_description": "stuff"
+}

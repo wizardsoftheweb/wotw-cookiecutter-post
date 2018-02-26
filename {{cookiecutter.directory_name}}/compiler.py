@@ -9,9 +9,9 @@ POSTS_DIR = join(CURRENT_DIR, '{{ cookiecutter.posts_dir }}')
 TEMPLATES_DIR = join(CURRENT_DIR, '{{ cookiecutter.templates_dir }}')
 BUILD_DIR = join(CURRENT_DIR, '{{ cookiecutter.build_dir }}')
 
-compiler = Compiler(
+COMPILER = Compiler(
     POSTS_DIR,
     TEMPLATES_DIR,
     BUILD_DIR
 )
-compiler.compile_everything()
+COMPILER.compile_everything()
